@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 import { getEnv } from "./dotEnv.js";
 
 
-
-
 const url = getEnv("MONGOO_DB_URL");
 
 

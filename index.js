@@ -3,10 +3,13 @@ import morgan from 'morgan';
 import cors from 'cors'
 import dotenv from 'dotenv';
 import { corsConfig } from './config/cors.js'
-import { userRouter } from './routes/index.js'
+import { userRouter, autlogsRouter, categoriesRouter } from './routes/index.js'
+import { getEnv } from './config/dotEnv.js';
 
+if (getEnv("NODE_ENV") !== 'product') {
+    dotenv.config();
+}
 
-dotenv.config();
 
 const app = express();
 app.use(express.json());
@@ -21,7 +24,9 @@ app.use((req, res, next) => {
     next()
 });
 
-app.use('/user', userRouter)
+app.use('/user', userRouter);
+app.use('/autlog', autlogsRouter);
+app.use('/categories', categoriesRouter);
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`${PORT} listening`)
 })

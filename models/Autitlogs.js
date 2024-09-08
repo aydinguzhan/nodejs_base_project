@@ -4,15 +4,15 @@ import mongoose from "../config/mongoose.js";
 
 // Kullanıcı şeması oluşturuluyor
 const schema = new Schema({
-    first_name: {
+    level: {
         type: String,
         required: true
     },
-    last_name: {
+    location: {
         type: String,
         required: true
     },
-    is_active: {
+    proc_type: {
         type: Boolean,
         default: true
     },
@@ -21,26 +21,18 @@ const schema = new Schema({
         required: true,
         unique: true
     },
-    password: {
+    log: {
         type: String,
         required: true
-    },
-    phone_number: {
-        type: String,
-        required: false,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
     }
 }, {
     timestamps: true
 });
 
-class Users extends mongoose.Model { }
+class Autitlogs extends mongoose.Model { }
 
-schema.loadClass(Users)
+schema.loadClass(Autitlogs)
 
 
 
-export default mongoose.model('users', schema);;
+export default mongoose.model('autitlogs', schema);;
