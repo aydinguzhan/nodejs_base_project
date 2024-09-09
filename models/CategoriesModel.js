@@ -4,13 +4,17 @@ import mongoose from "../config/mongoose.js";
 
 // Kullanıcı şeması oluşturuluyor
 const schema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
     is_active: {
         type: Boolean,
         default: true
     },
     created_by: {
         type: String,
-        required: true
+        required: false
     },
 }, {
     timestamps: true

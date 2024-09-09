@@ -6,7 +6,7 @@ const url = getEnv("MONGOO_DB_URL");
 
 
 mongoose.connect(url)
-    .then(() => console.log('MongoDB bağlantısı başarılı'))
+    .then(() => log('MongoDB bağlantısı başarılı'))
     .catch(err => console.error('MongoDB bağlantısı başarısız:', err));
 
 export default mongoose

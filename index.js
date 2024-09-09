@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors'
 import dotenv from 'dotenv';
 import { corsConfig } from './config/cors.js'
-import { userRouter, autlogsRouter, categoriesRouter } from './routes/index.js'
+import { userRouter, AutlogsRouter, CategoriesRouter } from './routes/index.js'
 import { getEnv } from './config/dotEnv.js';
 
 if (getEnv("NODE_ENV") !== 'product') {
@@ -24,9 +24,9 @@ app.use((req, res, next) => {
     next()
 });
 
-app.use('/user', userRouter);
-app.use('/autlog', autlogsRouter);
-app.use('/categories', categoriesRouter);
+app.use('/api/user', userRouter);
+app.use('/api/autlog', AutlogsRouter);
+app.use('/api/categories', CategoriesRouter);
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`${PORT} listening`)
 })

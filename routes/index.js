@@ -1,3 +1,3 @@
-export { default as userRouter } from './userRouter.js';
-export { default as autlogsRouter } from './autlogs.js';
-export { default as categoriesRouter } from './categories.js';
+export { default as userRouter } from './UserRouter.js';
+export { default as AutlogsRouter } from './AutlogsRouter.js';
+export { default as CategoriesRouter } from './CategoriesRouter.js';
